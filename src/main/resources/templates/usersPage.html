@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Użytkownicy</title>
+</head>
+<body>
+<form action="/users" method="post">
+    <input type="text" name="firstName">
+    <input type="text" name="lastName">
+    <input type="text" name="email">
+
+    <select name="country" id="countrySelect">
+        <option value=""></option>
+        <option th:each="xyz : ${Countries}" th:value="${xyz.name()}" th:text="${xyz.getCountryName()}"></option>
+    </select>
+    <button>Zapisz</button>
+    <hr>
+    Liczba uzytkownikow w bazie: <span th:text="${countUsers}"></span>
+
+
+
+</form>
+
+</body>
+</html>
